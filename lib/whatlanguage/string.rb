@@ -1,11 +1,11 @@
 require 'whatlanguage'
 
 class String
-  def language
-    WhatLanguage.new(:all).language(self)
+  def language(lang=:all)
+    WhatLanguage.new(lang).language(self)
   end
 
-  def language_iso
-    WhatLanguage.new(:all).language_iso(self)
+  def language_iso(lang=:all)
+    WhatLanguage.new(lang).language_iso(self)
   end
 end

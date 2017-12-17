@@ -28,7 +28,8 @@ class WhatLanguage
     :portuguese => :pt,
     :russian => :ru,
     :spanish => :es,
-    :swedish => :sv
+    :swedish => :sv,
+    :chinese => :cn
   }
 
   @@data = {}
@@ -59,6 +60,7 @@ class WhatLanguage
   def process_text(text)
     results = Hash.new(0)
     it = 0
+    text = text.split('').join(" ") if @selection.include?(:chinese)
     to_lowercase(text).split.each do |word|
       it += 1
 
